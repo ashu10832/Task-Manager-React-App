@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import LoginPage from './components/LoginPage'
-import SignUpPage from './components/SignUpPage'
 import AppRouter from './routers/AppRouter'
+import { Provider } from 'react-redux'
+import configureStore from './store/store'
+
+const store = configureStore()
+
 
 ReactDOM.render(
-  <AppRouter />,
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>,
   document.getElementById('root')
 );
 

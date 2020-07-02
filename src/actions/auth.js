@@ -17,7 +17,6 @@ export const signin = async (data) => {
 
 }
 
-
 export const signup = async (data) => {
 
   const options = {
@@ -27,5 +26,14 @@ export const signup = async (data) => {
   };
 
   return axios(options)
+
+}
+
+
+export const login = (token = '') => {
+  return {
+    type:'LOGGED_IN',
+    token
+  }  
 
 }

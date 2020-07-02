@@ -1,11 +1,12 @@
 import React from 'react';
-import {signin} from '../actions/auth'
+import {signin,login} from '../actions/auth'
+import {connect} from 'react-redux'
+
+
 const axios = require('axios').default;
 
 
-export default class LoginPage extends React.Component {
-
-
+class LoginPage extends React.Component {
 
     constructor(props){
         super(props)
@@ -13,7 +14,6 @@ export default class LoginPage extends React.Component {
             error:'',
             loggedIn:false
         }
-
     }
 
     onLoginSubmit = async (e) => {
@@ -29,11 +29,14 @@ export default class LoginPage extends React.Component {
                 email:document.querySelector('#email').value,
                 password:document.querySelector('#password').value  
             })
+            
             console.log(response.data)
             this.setState(()=>({
                 error:'',
                 loggedIn:true
             }))
+            this.props.dispatch(login())
+            this.props.history.push("/");
         } catch (error) {
             console.log(error)
             this.setState(()=>({
@@ -65,3 +68,11 @@ export default class LoginPage extends React.Component {
 
     }
 }
+
+const mapStateToProps = (state,props) =>{
+    return {
+        ...state
+    }
+}
+
+export default connect(mapStateToProps)(LoginPage)

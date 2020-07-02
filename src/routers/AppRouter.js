@@ -3,6 +3,7 @@ import {Switch,Route, BrowserRouter} from 'react-router-dom'
 import LoginPage from '../components/LoginPage'
 import SignUpPage from '../components/SignUpPage'
 import Dashboard from '../components/Dashboard'
+import PrivateRoute from './PrivateRoute'
 
 export default () => {
 
@@ -10,18 +11,11 @@ export default () => {
         <BrowserRouter>
         <Switch>
         
-        <Route path="/login">
-            <LoginPage />
-        </Route>
+        <Route path="/login" component={LoginPage}/>
 
-        <Route path="/signup">
-            <SignUpPage />
-        </Route>
+        <Route path="/signup" component={SignUpPage}/>
 
-        <Route path="/">
-            <Dashboard />
-        </Route>
-        
+        <PrivateRoute path="/" component={Dashboard}/>
         
         </Switch>
         </BrowserRouter>
