@@ -18,45 +18,14 @@ export const signin = async (data) => {
 }
 
 
+export const signup = async (data) => {
 
-// var config = {
-//   url,
-//   method:'post',
-//   headers: {'Access-Control-Allow-Origin': '*'},
-// };
+  const options = {
+    url: `${baseUrl}/users`,
+    method: 'POST',
+    data
+  };
 
-// export const signin = (data) => {
-//   return async (data) => {
-//     await axios({
-//       method: 'post',
-//       url: url,
-//       headers: {
-//         'Access-Control-Allow-Origin': '*',
-//         'Accept': 'application/json',
-//       },
-//       data: {
-//         email: data.email,
-//         password: data.password,
-//       }
-//     }).then(function (response) {
-//       console.log(response);
-//       return response
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//       return error
-//     });
-//   }
+  return axios(options)
 
-  // return async () => {
-  //   return fetch(url,{
-  //     method: 'POST',
-  //     headers: {
-  //         'Content-Type': 'application/json'
-  // },
-  //     body: JSON.stringify(data)
-  // })
-  // .then(res=>{              
-  //     return res.json()
-  // })
-  // }
+}

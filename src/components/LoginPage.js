@@ -5,13 +5,22 @@ const axios = require('axios').default;
 
 export default class LoginPage extends React.Component {
 
+
+
     constructor(props){
         super(props)
+        this.state = {
+            error:'',
+            loggedIn:false
+        }
+
     }
 
     onLoginSubmit = async (e) => {
         e.preventDefault()
         console.log('Submitted')
+
+        //console.log(e.target.elements.email.value);
 
 
         // call upon the api and pass my email and password.
@@ -21,36 +30,17 @@ export default class LoginPage extends React.Component {
                 password:document.querySelector('#password').value  
             })
             console.log(response.data)
+            this.setState(()=>({
+                error:'',
+                loggedIn:true
+            }))
         } catch (error) {
             console.log(error)
+            this.setState(()=>({
+                error:'Unable to log in',
+                loggedIn:false
+            }))
         }
-
-        // wait for the response
-        // if the response is 200, then get the token
-        // if error happens, then display the error
-
-        // const options = {
-        //     url: 'http://localhost:3001/users/login',
-        //     method: 'POST',
-        //     headers: {
-        //     // Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWZjOTlmYzQ5Y2MzN2RkYzExNGFkOWYiLCJpYXQiOjE1OTM2MTI3OTYsImV4cCI6MTU5NDIxNzU5Nn0.4pl1HbIMsO3FhFIhrNEy5kI0RJcemRUunlk52AITjAg`
-        //     },
-        //     data: {
-        //     email: 'ashu10832@gmail.com',
-        //     password: 'testing'
-        //     }
-        // };
-
-        
-        
-        // axios(options)
-        //     .then(response => {
-        //     console.log(response.status);
-        //     }).catch((err)=>{
-        //         console.log(err);
-        //     });
-
-
     }
 
 
@@ -59,6 +49,9 @@ export default class LoginPage extends React.Component {
         return (
             <div>
                 <h1>Login</h1>
+                {this.state.error && <h3>{this.state.error}</h3>}
+                {this.state.loggedIn && <h3>Logged In Successfully!</h3>}
+
                 <form onSubmit={this.onLoginSubmit}>
                 <input id="email" type="text" placeholder="Email" name="email" />
                 <input id="password" type="text" placeholder="Password" name="password" />
