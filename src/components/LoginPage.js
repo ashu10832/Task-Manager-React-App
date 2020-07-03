@@ -3,9 +3,6 @@ import {signin,login} from '../actions/auth'
 import {connect} from 'react-redux'
 
 
-const axios = require('axios').default;
-
-
 class LoginPage extends React.Component {
 
     constructor(props){
@@ -64,8 +61,6 @@ class LoginPage extends React.Component {
             </div>
 
         )
-
-
     }
 }
 

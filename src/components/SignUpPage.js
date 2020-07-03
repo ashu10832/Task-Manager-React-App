@@ -1,6 +1,5 @@
 import React from 'react';
 import {signup} from '../actions/auth'
-const axios = require('axios').default;
 
 
 // TODO: Data Validation

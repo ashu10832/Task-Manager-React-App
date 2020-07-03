@@ -1,6 +1,7 @@
 const axios = require('axios').default;
 
-const baseUrl = 'http://localhost:3001'
+const baseUrl = process.env.REACT_APP_BASE_URL
+console.log(baseUrl)
 
 export const signin = async (data) => {
 
