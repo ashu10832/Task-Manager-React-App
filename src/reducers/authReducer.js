@@ -1,5 +1,5 @@
 const authReducerDefaultState = {
-    loggedIn:false
+    loggedIn:localStorage.getItem('token') ? true : false
 }
 
 export default (state = authReducerDefaultState,action) => {

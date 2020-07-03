@@ -33,6 +33,7 @@ class LoginPage extends React.Component {
                 loggedIn:true
             }))
             this.props.dispatch(login())
+            localStorage.setItem('token', response.data.token)
             this.props.history.push("/");
         } catch (error) {
             console.log(error)
