@@ -22,18 +22,18 @@ class LoginPage extends React.Component {
 
         // call upon the api and pass my email and password.
         try {
-            const response = await signin({
+            const response = await this.props.dispatch(signin({
                 email:document.querySelector('#email').value,
                 password:document.querySelector('#password').value  
-            })
+            }))
             
             console.log(response.data)
             this.setState(()=>({
                 error:'',
                 loggedIn:true
             }))
-            this.props.dispatch(login())
-            localStorage.setItem('token', response.data.token)
+            //this.props.dispatch(login())
+            //localStorage.setItem('token', response.data.token)
             this.props.history.push("/");
         } catch (error) {
             console.log(error)

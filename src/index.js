@@ -8,7 +8,6 @@ import configureStore from './store/store'
 
 const store = configureStore()
 
-console.log(process.env.BASE_URL)
 
 ReactDOM.render(
   <Provider store={store}>

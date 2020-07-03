@@ -12,9 +12,9 @@ const PrivateRoute = (props) => {
 }
 
 const mapStateToProps = (state,props) => {
-    console.log(state)
+    //console.log(state)
     return {
-        isAuthenticated: state.loggedIn
+        isAuthenticated: state.auth.loggedIn
     }
 }
 

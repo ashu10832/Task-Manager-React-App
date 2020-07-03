@@ -1,22 +1,23 @@
-import  React, {useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getAllTasks } from '../actions/task'
+import { connect } from 'react-redux'
 import TaskList from './TaskList';
 
 // Use hooks
 // When logged in, i need to get the tasks and display it to the user
 
-const Dashboard = (props) => {
+const Dashboard = ({tasks,dispatch}) => {
 
-    const [tasks, setTasks] = useState([])
+    //const [tasks, setTasks] = useState([])
 
     useEffect(() => {
         // get the tasks and set them
-
-        const fetchTasks =  async () => {
+        
+        const fetchTasks = async () => {
             try {
-                const response = await getAllTasks()
-                console.log(response)
-                setTasks(response.data)
+                const allTasks = await dispatch(getAllTasks())
+                console.log(allTasks)
+                //setTasks(allTasks)
 
             } catch (error) {
                 console.log(error)
@@ -24,8 +25,6 @@ const Dashboard = (props) => {
         }
 
         fetchTasks()
-
-
     }, []);
 
 
@@ -33,9 +32,18 @@ const Dashboard = (props) => {
 
         <div>
             <h2>Dashboard</h2>
-            <TaskList tasks = {tasks} />
+            <TaskList tasks={tasks} />
         </div>
     )
 }
 
-export default Dashboard
+const mapStateToProps = (state,props) =>{
+    return {
+        tasks:state.tasks
+    }
+}
+
+export default connect(mapStateToProps)(Dashboard)
+
+
+
