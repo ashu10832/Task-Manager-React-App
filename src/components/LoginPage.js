@@ -1,5 +1,5 @@
 import React from 'react';
-import {signin,login} from '../actions/auth'
+import {signin} from '../actions/auth'
 import {connect} from 'react-redux'
 
 
@@ -16,9 +16,6 @@ class LoginPage extends React.Component {
     onLoginSubmit = async (e) => {
         e.preventDefault()
         console.log('Submitted')
-
-        //console.log(e.target.elements.email.value);
-
 
         // call upon the api and pass my email and password.
         try {

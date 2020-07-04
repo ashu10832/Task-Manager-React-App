@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getAllTasks } from '../actions/task'
 import { connect } from 'react-redux'
 import TaskList from './TaskList';
+import AddTask from './AddTask'
 
 // Use hooks
 // When logged in, i need to get the tasks and display it to the user
@@ -32,6 +33,7 @@ const Dashboard = ({tasks,dispatch}) => {
 
         <div>
             <h2>Dashboard</h2>
+            <AddTask />
             <TaskList tasks={tasks} />
         </div>
     )
