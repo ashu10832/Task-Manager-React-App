@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 
 const AddTask = (props) => {
 
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, watch, errors ,setValue} = useForm();
 
     const onSubmit = async (data) => {
         console.log(data)
@@ -17,6 +17,8 @@ const AddTask = (props) => {
             //dispatch a call to add new task
             const res = await props.dispatch(addNewTask(data))
             console.log(res)
+            setValue("description","")
+
         } catch (error) {
             console.log(error)
             

@@ -1,15 +1,10 @@
-const axios = require('axios').default;
+import {setAuthHeader} from './common'
 
+
+import axios from 'axios'
+//const axios = require('axios').default;
 
 const baseURL = process.env.REACT_APP_BASE_URL
-
-const tempToken = localStorage.getItem('token')
-
-const setAuthHeader = () => {
-    return {
-        'Authorization': `Bearer ${tempToken}`
-    }
-}
 
 
 export const getAllTasks = () => {
@@ -52,5 +47,4 @@ export const newTask = (task = {}) => {
         type: 'NEW_TASK',
         task
     }
-
 }

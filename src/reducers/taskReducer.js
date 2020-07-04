@@ -8,6 +8,8 @@ export default (state = taskReducerDefaultState,action) => {
 
         case 'NEW_TASK':
             return [...state,action.task]
+            case 'LOGGED_OUT':
+                return []
         default :
             return state
     }

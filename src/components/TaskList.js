@@ -6,13 +6,10 @@ const TaskList = (props) => {
 
     return (
         <div>
-        
         {props.tasks.map((task)=> {
             return <Task task={task} key={task._id} />
         })}
-        
         </div>
-
     )
 }
 

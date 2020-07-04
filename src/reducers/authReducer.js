@@ -9,6 +9,11 @@ export default (state = authReducerDefaultState,action) => {
                 ...state,
                 loggedIn:true,
             }
+        case 'LOGGED_OUT':
+            return {
+                ...state,
+                loggedIn:false
+            }
         default:
             return state
     }
