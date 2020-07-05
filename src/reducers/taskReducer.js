@@ -10,6 +10,15 @@ export default (state = taskReducerDefaultState,action) => {
             return [...state,action.task]
             case 'LOGGED_OUT':
                 return []
+            case 'DELETE_TASK':
+                return state.filter((task)=>{
+                    return task._id !== action.task._id
+                })
+            case 'UPDATE_TASK':
+                return state.map((task)=>task._id === action.task._id ? {...task,...action.task} : task)
+            case 'TOGGLE_EDIT_MODE':
+                return state.map((task)=>task._id === action.taskId ? 
+                task.editMode ? {...task,editMode:!task.editMode} : {...task,editMode:true} : task)
         default :
             return state
     }
