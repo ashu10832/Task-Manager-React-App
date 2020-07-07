@@ -3,7 +3,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Task Manager App
 
 Simple task manager application built using React. Uses Redux for state management. 
-Uses my task-manager-api built on NodeJS and Express. [Link](https://github.com/ashu10832/task-manager-api)
+<br>Uses my task-manager-api built on NodeJS and Express. [Link](https://github.com/ashu10832/task-manager-api)
+
+## Running the App in Debug
+
+1. You need to first clone and run the task-manager-api from [this](https://github.com/ashu10832/task-manager-api) repository. 
+2. Next, clone this repo.
+3. If you have changed the port for task-manager-api then you need to update that in the config/dev.env file.
+4. Use `npm run dev` to start the app.
+5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+
 
 
 ## Available Scripts
