@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Task Manager App
+
+Simple task manager application built using React. Uses Redux for state management. 
+Uses my task-manager-api built on NodeJS and Express. [Link](https://github.com/ashu10832/task-manager-api)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
