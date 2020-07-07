@@ -29,10 +29,10 @@ const AddTask = (props) => {
 
 
     return (
-        <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="New Task" name="description" ref={register} />
-        <button id="addtask" type="submit" >Add Task</button>
+        <div >
+        <form className="add-option" onSubmit={handleSubmit(onSubmit)}>
+        <input className="add-option__input" type="text" placeholder="New Task" name="description" ref={register} />
+        <button className="button" id="addtask" type="submit" >Add Task</button>
         </form>
         </div>
     )

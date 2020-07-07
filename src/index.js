@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import AppRouter from './routers/AppRouter'
 import { Provider } from 'react-redux'
 import configureStore from './store/store'
+import './styles/styles.scss'
 
 const store = configureStore()
 

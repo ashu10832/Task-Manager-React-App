@@ -1,6 +1,7 @@
 import React from 'react';
 import {signin} from '../actions/auth'
 import {connect} from 'react-redux'
+import Header from './Header';
 
 
 class LoginPage extends React.Component {
@@ -46,14 +47,17 @@ class LoginPage extends React.Component {
 
         return (
             <div>
-                <h1>Login</h1>
+                <Header />
+                <h1 className="title">Login</h1>
                 {this.state.error && <h3>{this.state.error}</h3>}
                 {this.state.loggedIn && <h3>Logged In Successfully!</h3>}
 
-                <form onSubmit={this.onLoginSubmit}>
+                <form className="container form" onSubmit={this.onLoginSubmit}>
                 <input id="email" type="text" placeholder="Email" name="email" />
-                <input id="password" type="text" placeholder="Password" name="password" />
-                <button>Login</button>
+                <input id="password" type="password" placeholder="Password" name="password" />
+
+                <button type="button" className="button--link form__call-for-signup" onClick={()=>this.props.history.push("/signup")}>New here? Click here to Signup</button>
+                <button type="submit" className="button">Login</button>
                 
                 </form>
             </div>

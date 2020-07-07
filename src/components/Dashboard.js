@@ -5,6 +5,7 @@ import TaskList from './TaskList';
 import AddTask from './AddTask'
 import Header from './Header'
 import {logout} from '../actions/auth'
+import Footer from './Footer';
 
 // Use hooks
 // When logged in, i need to get the tasks and display it to the user
@@ -46,11 +47,15 @@ const Dashboard = ({tasks,dispatch,history}) => {
 
     return (
 
-        <div>
+        <div className="wrapper">
             <Header logoutHandler={logoutHandler}/>
-            <h2>Dashboard</h2>
+            <div className="container content">
+            <h2 className="dashboard__heading">My Tasks</h2>
             <AddTask />
             <TaskList tasks={tasks} />
+            </div>
+            <Footer />
+
         </div>
     )
 }

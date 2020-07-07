@@ -1,0 +1,32 @@
+.taskList{
+    background-color: $light-blue;
+    margin: $s-size;
+}
+
+
+.task{
+    border-top: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: $m-size;
+
+}
+
+.task__description{
+    flex-grow: 1;
+    font-size: $xm-size;
+    word-break: break-all;
+    margin: 0;
+
+}
+
+.task__date{
+    font-size: $s-size;
+    margin-left: $m-size;
+    padding-bottom: $s-size;
+}
+
+.task__completed{
+    margin:$m-size
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { signup } from '../actions/auth'
 import {connect} from 'react-redux'
+import Header from './Header';
 
 
 
@@ -50,16 +51,17 @@ class SignUpPage extends React.Component {
 
         return (
             <div>
-                <h1>Sign Up</h1>
+            <Header />
+                <h1 className="title">Sign Up</h1>
 
                 {this.state.signedUp && <h3>Signedup Successfully!</h3>}
                 {this.state.error && <h3>{this.state.error}</h3>}
-                <form onSubmit={this.onSignUpSubmit}>
+                <form className="form container" onSubmit={this.onSignUpSubmit}>
                     <input id="name" type="text" placeholder="Name" name="name" />
                     <input id="age" type="number" placeholder="Age" name="age" />
                     <input id="email" type="text" placeholder="Email" name="email" />
-                    <input id="password" type="text" placeholder="Password" name="password" />
-                    <button>SignUp</button>
+                    <input id="password" type="password" placeholder="Password" name="password" />
+                    <button type="submit" className="button">SignUp</button>
 
                 </form>
             </div>

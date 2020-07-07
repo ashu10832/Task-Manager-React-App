@@ -1,0 +1,37 @@
+.header {
+
+    background: $off-black;
+    margin-bottom: $m-size;
+    color: white;
+    overflow: hidden;
+    height: $xl-size;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+//BEM Naming conventon - block element modifier
+.header__title{
+    font-size: $l-size;
+    margin: 0;
+
+}
+
+.header__subtitle{
+    color: $off-white;
+    font-size: $m-size;
+    font-weight: 300;
+    margin: 0;
+}
+
+@media (min-width: $desktop-breakpoint){
+    .header{
+        margin-bottom: $xl-size;
+    }
+}
+
+.header__logout{
+    float: right;
+    background: $light-blue;
+    height: inherit;
+}

@@ -1,0 +1,21 @@
+.footer{
+    background: $off-black;
+    color: white;
+    margin: 0;
+    height: $xl-size;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    //position: absolute;
+    //bottom: 0;
+    width: 100%;
+    
+}
+
+.footer__text{
+    text-align: center;
+}
+
+.footer__text a{
+    color: white;
+}

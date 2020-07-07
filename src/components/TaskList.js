@@ -44,7 +44,7 @@ const TaskList = (props) => {
     }
 
     return (
-        <div>
+        <div className="taskList">
         {props.tasks.map((task)=> {
             return <Task 
                 task={task} 
@@ -59,7 +59,6 @@ const TaskList = (props) => {
         </div>
     )
 }
-
 
 
 export default connect()(TaskList)

@@ -1,0 +1,11 @@
+.container{
+    width: 80%;
+    margin:0 auto;
+    padding: 0 $m-size;
+}
+
+@media (min-width: $desktop-breakpoint){
+    .container{
+        width: 50%;
+    }
+}

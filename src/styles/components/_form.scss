@@ -1,0 +1,31 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: $light-blue;
+    padding:$m-size;
+    width: 70%;
+    padding-top: $xl-size;
+}
+
+@media (min-width: $desktop-breakpoint){
+    .container{
+        width: 30%;
+    }
+}
+
+.form input{
+    padding:$m-size;
+    background: $dark-blue;
+    color: white;
+    font-size: $m-size;
+    margin-bottom: $l-size;
+}
+
+.form .button{
+    margin-top: 20rem;
+}
+
+.form__call-for-signup{
+    color: white;
+    background:none;
+}
