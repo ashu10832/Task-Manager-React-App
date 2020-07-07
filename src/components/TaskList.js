@@ -14,6 +14,7 @@ const TaskList = (props) => {
         console.log('Edit task called')
         try {
             const res =  await props.dispatch(editTask(task._id,edits))
+            console.log(res)
         } catch (error) {
             console.log(error)
         }
@@ -23,6 +24,7 @@ const TaskList = (props) => {
         console.log(taskId)
         try {
             const res = await props.dispatch(deleteTask(taskId))
+            console.log(res)
         } catch (error) {
             console.log(error)
         }
@@ -32,6 +34,7 @@ const TaskList = (props) => {
         console.log('Toggle status called:')
         try {
             const res = await props.dispatch(toggleStatus(task))
+            console.log(res)
         } catch (error) {
             console.log(error)
         }

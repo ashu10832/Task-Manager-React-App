@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 
 const AddTask = (props) => {
 
-    const { register, handleSubmit, watch, errors ,setValue} = useForm();
+    const { register, handleSubmit ,setValue} = useForm();
 
     const onSubmit = async (data) => {
         console.log(data)

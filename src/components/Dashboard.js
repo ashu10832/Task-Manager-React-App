@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { getAllTasks } from '../actions/task'
 import { connect } from 'react-redux'
 import TaskList from './TaskList';
@@ -16,6 +16,7 @@ const Dashboard = ({tasks,dispatch,history}) => {
 
         try {
             const res = await dispatch(logout())
+            console.log(res)
             history.push('/')
         } catch (error) {
          console.log(error)   
