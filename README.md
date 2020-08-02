@@ -3,7 +3,7 @@
 Simple task manager application built using React. Uses Redux for state management. 
 <br>Uses my task-manager-api built on NodeJS and Express. [Link](https://github.com/ashu10832/task-manager-api)
 
-## Checkout the app [here](ashu-task-manager.netlify.app/)
+## Checkout the app [here](https://ashu-task-manager.netlify.app/)
 
 ## Running the App in Debug
 
